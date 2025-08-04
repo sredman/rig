@@ -129,7 +129,7 @@ impl ProviderClient for Client {
 }
 
 impl CompletionClient for Client {
-    type CompletionModel = super::responses_api::ResponsesCompletionModel;
+    type CompletionModel = super::completion::CompletionModel;
     /// Create a completion model with the given name.
     ///
     /// # Example
@@ -141,8 +141,8 @@ impl CompletionClient for Client {
     ///
     /// let gpt4 = openai.completion_model(openai::GPT_4);
     /// ```
-    fn completion_model(&self, model: &str) -> super::responses_api::ResponsesCompletionModel {
-        super::responses_api::ResponsesCompletionModel::new(self.clone(), model)
+    fn completion_model(&self, model: &str) -> super::completion::CompletionModel {
+        super::completion::CompletionModel::new(self.clone(), model)
     }
 }
 
