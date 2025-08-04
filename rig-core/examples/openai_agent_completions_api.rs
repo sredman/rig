@@ -14,7 +14,6 @@ async fn main() -> Result<(), anyhow::Error> {
         &env::var("OPENAI_API_KEY").expect("OPENAI_API_KEY not set"),
     )
     .completion_model("gpt-4o")
-    .completions_api()
     .into_agent_builder()
     .preamble("You are a helpful assistant")
     .build();
