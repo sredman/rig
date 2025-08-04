@@ -227,6 +227,7 @@ impl<M: CompletionModel> Chat for Agent<M> {
         let mut cloned_history = chat_history.clone();
         PromptRequest::new(self, prompt)
             .with_history(&mut cloned_history)
+            .multi_turn(2)
             .await
     }
 }
